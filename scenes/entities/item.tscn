@@ -1,0 +1,32 @@
+[gd_scene load_steps=7 format=3 uid="uid://bcb83sbgp4qi3"]
+
+[ext_resource type="Script" path="res://assets/scripts/item.gd" id="1_0fp4g"]
+[ext_resource type="Texture2D" uid="uid://c16eqnrb6we8w" path="res://assets/sprites/temp/shirt.png" id="1_pf4e2"]
+[ext_resource type="Script" path="res://assets/scripts/item_area.gd" id="2_y4obx"]
+
+[sub_resource type="SphereShape3D" id="SphereShape3D_5aevo"]
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_sqhap"]
+transparency = 1
+albedo_texture = ExtResource("1_pf4e2")
+
+[sub_resource type="PlaneMesh" id="PlaneMesh_hnswv"]
+material = SubResource("StandardMaterial3D_sqhap")
+
+[node name="Item" type="Node3D"]
+script = ExtResource("1_0fp4g")
+
+[node name="ItemArea" type="Area3D" parent="."]
+script = ExtResource("2_y4obx")
+
+[node name="CollisionShape2D" type="CollisionShape3D" parent="ItemArea"]
+transform = Transform3D(2, 0, 0, 0, 2, 0, 0, 0, 2, 0, 0, 0)
+shape = SubResource("SphereShape3D_5aevo")
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, -4.37114e-08, -1, 0, 1, -4.37114e-08, 0, 0, 0)
+mesh = SubResource("PlaneMesh_hnswv")
+
+[connection signal="dropped" from="ItemArea" to="ItemArea" method="_on_dropped"]
+[connection signal="mouse_entered" from="ItemArea" to="ItemArea" method="_on_mouse_entered"]
+[connection signal="mouse_exited" from="ItemArea" to="ItemArea" method="_on_mouse_exited"]

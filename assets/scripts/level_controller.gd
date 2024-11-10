@@ -1,0 +1,20 @@
+extends Node3D
+
+@export var arriving_customers: Array[Node3D]
+
+var leaving_customers = []
+
+# Called when the node enters the scene tree for the first time.
+func _ready():
+	pass # Replace with function body.
+
+# Called every frame. 'delta' is the elapsed time since the previous frame.
+func _process(delta):
+	pass
+
+func _on_interactable_area_area_shape_entered(area_rid, area, area_shape_index, local_shape_index):
+	area.get_parent().add_to_group("interactable")
+
+
+func _on_interactable_area_area_shape_exited(area_rid, area, area_shape_index, local_shape_index):
+	area.get_parent().add_to_group("interactable")

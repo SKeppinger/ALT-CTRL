@@ -1,0 +1,47 @@
+[gd_scene load_steps=7 format=3 uid="uid://dpywxioj1xlin"]
+
+[ext_resource type="PackedScene" uid="uid://w32m7l7t3426" path="res://scenes/entities/coat_rack.tscn" id="1_usuw0"]
+[ext_resource type="PackedScene" uid="uid://buh1m2ydsxnxt" path="res://scenes/utility/player_controller.tscn" id="3_26ppk"]
+[ext_resource type="PackedScene" uid="uid://c4fc78mda3c5n" path="res://scenes/utility/level_controller.tscn" id="3_mwak4"]
+[ext_resource type="PackedScene" uid="uid://bcb83sbgp4qi3" path="res://scenes/entities/item.tscn" id="4_rux80"]
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_dkq37"]
+size = Vector3(50, 30, 6)
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_76i4q"]
+size = Vector3(50, 30, 0.01)
+
+[node name="Level" type="Node3D"]
+
+[node name="CoatRack" parent="." instance=ExtResource("1_usuw0")]
+
+[node name="Camera3D" type="Camera3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 9, 20)
+
+[node name="OmniLight3D" type="OmniLight3D" parent="Camera3D"]
+omni_range = 4096.0
+omni_attenuation = 0.0
+
+[node name="PlayerController" parent="." instance=ExtResource("3_26ppk")]
+
+[node name="LevelController" parent="." instance=ExtResource("3_mwak4")]
+
+[node name="InteractableArea" type="Area3D" parent="."]
+input_ray_pickable = false
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="InteractableArea"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 7.5, 4.97068)
+shape = SubResource("BoxShape3D_dkq37")
+
+[node name="MouseDepth" type="StaticBody3D" parent="."]
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="MouseDepth"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 7.5, 4)
+shape = SubResource("BoxShape3D_76i4q")
+
+[node name="Item" parent="." instance=ExtResource("4_rux80")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 4)
+
+[connection signal="area_shape_entered" from="InteractableArea" to="LevelController" method="_on_interactable_area_area_shape_entered"]
+[connection signal="area_shape_exited" from="InteractableArea" to="LevelController" method="_on_interactable_area_area_shape_exited"]
+[connection signal="body_entered" from="InteractableArea" to="LevelController" method="_on_interactable_area_body_entered"]

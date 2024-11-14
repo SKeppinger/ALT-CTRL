@@ -1,4 +1,4 @@
-[gd_scene load_steps=7 format=3 uid="uid://bcb83sbgp4qi3"]
+[gd_scene load_steps=8 format=3 uid="uid://bcb83sbgp4qi3"]
 
 [ext_resource type="Script" path="res://assets/scripts/item.gd" id="1_0fp4g"]
 [ext_resource type="Texture2D" uid="uid://c16eqnrb6we8w" path="res://assets/sprites/temp/shirt.png" id="1_pf4e2"]
@@ -13,13 +13,18 @@ albedo_texture = ExtResource("1_pf4e2")
 [sub_resource type="PlaneMesh" id="PlaneMesh_hnswv"]
 material = SubResource("StandardMaterial3D_sqhap")
 
+[sub_resource type="CylinderShape3D" id="CylinderShape3D_q64hu"]
+height = 4.0
+radius = 1.0
+
 [node name="Item" type="Node3D"]
 script = ExtResource("1_0fp4g")
 
 [node name="ItemArea" type="Area3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 0.500154)
 script = ExtResource("2_y4obx")
 
-[node name="CollisionShape2D" type="CollisionShape3D" parent="ItemArea"]
+[node name="CollisionShape3D" type="CollisionShape3D" parent="ItemArea"]
 transform = Transform3D(2, 0, 0, 0, 2, 0, 0, 0, 2, 0, 0, 0)
 shape = SubResource("SphereShape3D_5aevo")
 
@@ -27,6 +32,13 @@ shape = SubResource("SphereShape3D_5aevo")
 transform = Transform3D(1, 0, 0, 0, -4.37114e-08, -1, 0, 1, -4.37114e-08, 0, 0, 0)
 mesh = SubResource("PlaneMesh_hnswv")
 
-[connection signal="dropped" from="ItemArea" to="ItemArea" method="_on_dropped"]
+[node name="DropArea" type="Area3D" parent="."]
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="DropArea"]
+transform = Transform3D(1, 0, 0, 0, -4.37114e-08, -1, 0, 1, -4.37114e-08, 0, 0, -2)
+shape = SubResource("CylinderShape3D_q64hu")
+
 [connection signal="mouse_entered" from="ItemArea" to="ItemArea" method="_on_mouse_entered"]
 [connection signal="mouse_exited" from="ItemArea" to="ItemArea" method="_on_mouse_exited"]
+[connection signal="area_entered" from="DropArea" to="." method="_on_drop_area_area_entered"]
+[connection signal="area_exited" from="DropArea" to="." method="_on_drop_area_area_exited"]

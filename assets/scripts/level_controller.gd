@@ -15,6 +15,5 @@ func _process(delta):
 func _on_interactable_area_area_shape_entered(area_rid, area, area_shape_index, local_shape_index):
 	area.get_parent().add_to_group("interactable")
 
-
 func _on_interactable_area_area_shape_exited(area_rid, area, area_shape_index, local_shape_index):
-	area.get_parent().add_to_group("interactable")
+	area.get_parent().remove_from_group("interactable")

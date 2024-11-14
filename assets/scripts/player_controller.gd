@@ -28,8 +28,20 @@ func _process(_delta):
 	# In the future, a number will be read in and the coat rack's rotation will be set to that number
 	if Input.is_action_pressed("rotate_right"):
 		coat_rack.rotate_y(0.03)
+		# Also rotate hanging items
+		for node in get_tree().get_nodes_in_group("hanging"):
+			var vector_between = node.global_position - coat_rack.global_position
+			vector_between = vector_between.rotated(Vector3(0, 1, 0), 0.03)
+			node.global_position = vector_between
+			node.rotate_y(0.03)
 	elif Input.is_action_pressed("rotate_left"):
 		coat_rack.rotate_y(-0.03)
+		# Also rotate hanging items
+		for node in get_tree().get_nodes_in_group("hanging"):
+			var vector_between = node.global_position - coat_rack.global_position
+			vector_between = vector_between.rotated(Vector3(0, 1, 0), -0.03)
+			node.global_position = vector_between
+			node.rotate_y(-0.03)
 	# Read player input for dragging items
 	if held_item and Input.is_action_pressed("left_click"):
 		# Continue dragging the held item
@@ -39,6 +51,9 @@ func _process(_delta):
 		if (get_tree().get_first_node_in_group("targeted_item")):
 			held_item = get_tree().get_first_node_in_group("targeted_item") # Pick up the item
 			held_item.remove_from_group("hanging")
+			if held_item.get_holding():
+				held_item.clear_holding()
+			held_item.rotation = Vector3(0, 0, 0)
 	elif held_item and Input.is_action_just_released("left_click"):
-		#held_item.get_child("ItemArea").dropped.emit()
+		held_item.dropped.emit()
 		held_item = null # Stop holding the item

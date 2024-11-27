@@ -1,5 +1,7 @@
 extends Node3D
 
+@export var MOUSE_DEPTH = 6.0
+
 var held_item = null
 var coat_rack = null
 
@@ -18,6 +20,7 @@ func get_mouse_position():
 	var result = worldspace.intersect_ray(params)
 	
 	if result != {}:
+		result.position.z = MOUSE_DEPTH
 		return result.position
 	else:
 		return null
@@ -51,6 +54,7 @@ func _process(_delta):
 		if (get_tree().get_first_node_in_group("targeted_item")):
 			held_item = get_tree().get_first_node_in_group("targeted_item") # Pick up the item
 			held_item.remove_from_group("hanging")
+			held_item.remove_from_group("worn")
 			if held_item.get_holding():
 				held_item.clear_holding()
 			held_item.rotation = Vector3(0, 0, 0)

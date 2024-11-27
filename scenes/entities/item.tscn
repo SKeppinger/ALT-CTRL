@@ -1,17 +1,18 @@
 [gd_scene load_steps=8 format=3 uid="uid://bcb83sbgp4qi3"]
 
 [ext_resource type="Script" path="res://assets/scripts/item.gd" id="1_0fp4g"]
-[ext_resource type="Texture2D" uid="uid://c16eqnrb6we8w" path="res://assets/sprites/temp/shirt.png" id="1_pf4e2"]
 [ext_resource type="Script" path="res://assets/scripts/item_area.gd" id="2_y4obx"]
+[ext_resource type="Texture2D" uid="uid://pntn1tqd5kpp" path="res://assets/sprites/items/pants1.png" id="3_1mu0c"]
 
 [sub_resource type="SphereShape3D" id="SphereShape3D_5aevo"]
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_sqhap"]
 transparency = 1
-albedo_texture = ExtResource("1_pf4e2")
+albedo_texture = ExtResource("3_1mu0c")
 
 [sub_resource type="PlaneMesh" id="PlaneMesh_hnswv"]
 material = SubResource("StandardMaterial3D_sqhap")
+size = Vector2(6, 12)
 
 [sub_resource type="CylinderShape3D" id="CylinderShape3D_q64hu"]
 height = 4.0

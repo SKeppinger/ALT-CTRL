@@ -21,6 +21,9 @@ coat_rack=""
 interactable=""
 item_receiver=""
 hanging=""
+customer=""
+top=""
+bottom=""
 
 [input]
 

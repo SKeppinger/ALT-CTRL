@@ -1,9 +1,9 @@
-extends Node3D
+extends CharacterBody2D
 
 const TIME_TO_DESTINATION = 10
 const ACCEL_RATE = 2
 
-var last_destination = self.rotation_degrees.y
+var last_destination = self.position.x
 var buffer = ""
 var speed = 0
 var target_pos = -1
@@ -67,20 +67,53 @@ func process_buffer():
 	target_pos = parseInt * 2
 	if target_pos != last_destination:
 		last_destination = target_pos
-	distance = last_destination - self.rotation_degrees.y
+	distance = last_destination - self.position.x
 	if abs(speed) < abs(distance / TIME_TO_DESTINATION):
 		speed += sign(distance) * ACCEL_RATE
 	else:
 		speed = distance / TIME_TO_DESTINATION
-	if abs(speed) > abs(target_pos - self.rotation_degrees.y):
-		var diff = target_pos - self.rotation_degrees.y
-		self.rotation_degrees.y = target_pos
-		# Also rotate hanging items
-		for node in get_tree().get_nodes_in_group("hanging"):
-			node.rotation_degrees.y += diff
+	if abs(speed) > abs(target_pos - self.position.x):
+		self.position.x = target_pos
 		speed = 0
 	else:
-		self.rotation_degrees.y += speed
-		# Also rotate hanging items
-		for node in get_tree().get_nodes_in_group("hanging"):
-			node.rotation_degrees.y += speed
+		self.position.x += speed
+
+
+# this code has errors for cases where only 1 "|" causes it to lock out.
+#func process_buffer():
+	#var beg = buffer.find("|")
+	#var end = buffer.find("|", beg + 1)
+	#var errChck = -1
+	#var parseInt = -1
+	#if beg != -1 and end != -1:
+		#errChck = int(buffer.substr(beg + 1, 1))
+		#parseInt = buffer.substr(beg + 2, end - beg - 2)
+		#if parseInt.length() != errChck:
+			#print("BAD LENGTH")
+			#return
+		#parseInt = int(parseInt)
+	#else:
+		#print(buffer)
+		#print("BEG OR END IS BAD")
+		#return
+	#
+	#print(errChck, " ", parseInt)
+	
+#func _physics_process(delta: float) -> void:
+	## Add the gravity.
+	#if not is_on_floor():
+		#velocity += get_gravity() * delta
+#
+	## Handle jump.
+	#if Input.is_action_just_pressed("ui_accept") and is_on_floor():
+		#velocity.y = JUMP_VELOCITY
+#
+	## Get the input direction and handle the movement/deceleration.
+	## As good practice, you should replace UI actions with custom gameplay actions.
+	#var direction := Input.get_axis("ui_left", "ui_right")
+	#if direction:
+		#velocity.x = direction * SPEED
+	#else:
+		#velocity.x = move_toward(velocity.x, 0, SPEED)
+#
+	#move_and_slide()

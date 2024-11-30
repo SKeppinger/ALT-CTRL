@@ -1,0 +1,22 @@
+[gd_scene load_steps=3 format=3 uid="uid://dvj770wn2lg7l"]
+
+[ext_resource type="PackedScene" uid="uid://n5e4tx7wut0s" path="res://sercommtest/ser_comm.tscn" id="1_l2t6v"]
+[ext_resource type="PackedScene" uid="uid://w32m7l7t3426" path="res://scenes/entities/coat_rack.tscn" id="2_252yn"]
+
+[node name="Node3D" type="Node3D"]
+
+[node name="SerComm" parent="." instance=ExtResource("1_l2t6v")]
+port = 1
+unique_name_in_owner = true
+
+[node name="CoatRack" parent="." instance=ExtResource("2_252yn")]
+
+[node name="Camera3D" type="Camera3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 9, 20)
+keep_aspect = 0
+projection = 1
+size = 48.143
+
+[node name="OmniLight3D" type="OmniLight3D" parent="Camera3D"]
+omni_range = 4096.0
+omni_attenuation = 0.0

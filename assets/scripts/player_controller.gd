@@ -49,7 +49,11 @@ func _process(_delta):
 	if held_item and Input.is_action_pressed("left_click"):
 		# Continue dragging the held item
 		if get_mouse_position():
-			held_item.global_position = get_mouse_position()
+			if held_item.is_in_group("bottom"):
+				held_item.global_position = get_mouse_position()
+				held_item.global_position.y += 2.5
+			else:
+				held_item.global_position = get_mouse_position()
 	elif !held_item and Input.is_action_just_pressed("left_click"):
 		if (get_tree().get_first_node_in_group("targeted_item")):
 			held_item = get_tree().get_first_node_in_group("targeted_item") # Pick up the item

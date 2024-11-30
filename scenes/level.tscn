@@ -1,18 +1,23 @@
-[gd_scene load_steps=8 format=3 uid="uid://dpywxioj1xlin"]
+[gd_scene load_steps=9 format=3 uid="uid://dpywxioj1xlin"]
 
 [ext_resource type="PackedScene" uid="uid://w32m7l7t3426" path="res://scenes/entities/coat_rack.tscn" id="1_usuw0"]
 [ext_resource type="PackedScene" uid="uid://buh1m2ydsxnxt" path="res://scenes/utility/player_controller.tscn" id="3_26ppk"]
 [ext_resource type="PackedScene" uid="uid://c4fc78mda3c5n" path="res://scenes/utility/level_controller.tscn" id="3_mwak4"]
 [ext_resource type="PackedScene" uid="uid://bcb83sbgp4qi3" path="res://scenes/entities/item.tscn" id="4_rux80"]
 [ext_resource type="PackedScene" uid="uid://dtpslb75er7h0" path="res://scenes/entities/customer.tscn" id="5_458hy"]
+[ext_resource type="PackedScene" uid="uid://n5e4tx7wut0s" path="res://sercommtest/ser_comm.tscn" id="6_tr6qb"]
 
-[sub_resource type="BoxShape3D" id="BoxShape3D_dkq37"]
+[sub_resource type="BoxShape3D" id="BoxShape3D_rkf3p"]
 size = Vector3(50, 30, 4)
 
-[sub_resource type="BoxShape3D" id="BoxShape3D_76i4q"]
+[sub_resource type="BoxShape3D" id="BoxShape3D_onlbo"]
 size = Vector3(50, 30, 0.01)
 
 [node name="Level" type="Node3D"]
+
+[node name="SerComm" parent="." instance=ExtResource("6_tr6qb")]
+port = 1
+unique_name_in_owner = true
 
 [node name="CoatRack" parent="." instance=ExtResource("1_usuw0")]
 
@@ -26,30 +31,28 @@ size = 48.143
 omni_range = 4096.0
 omni_attenuation = 0.0
 
+[node name="LevelController" parent="." instance=ExtResource("3_mwak4")]
+
 [node name="PlayerController" parent="." instance=ExtResource("3_26ppk")]
 
-[node name="LevelController" parent="." instance=ExtResource("3_mwak4")]
+[node name="Item" parent="." groups=["bottom", "interactable"] instance=ExtResource("4_rux80")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 14.6614, 8.43762, 6)
+
+[node name="Customer" parent="." instance=ExtResource("5_458hy")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 10, 10, 5.9)
 
 [node name="InteractableArea" type="Area3D" parent="."]
 input_ray_pickable = false
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="InteractableArea"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 7.5, 3)
-shape = SubResource("BoxShape3D_dkq37")
+shape = SubResource("BoxShape3D_rkf3p")
 
 [node name="MouseDepth" type="StaticBody3D" parent="."]
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="MouseDepth"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 7.5, 4)
-shape = SubResource("BoxShape3D_76i4q")
+shape = SubResource("BoxShape3D_onlbo")
 
-[node name="Item" parent="." groups=["hanging", "top"] instance=ExtResource("4_rux80")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.033, 8.906, 6)
-
-[node name="Customer" parent="." instance=ExtResource("5_458hy")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 11.798, 5.87, 5.9)
-
-[connection signal="area_shape_entered" from="InteractableArea" to="LevelController" method="_on_interactable_area_area_shape_entered"]
-[connection signal="area_shape_exited" from="InteractableArea" to="LevelController" method="_on_interactable_area_area_shape_exited"]
-[connection signal="body_entered" from="InteractableArea" to="LevelController" method="_on_interactable_area_body_entered"]
-[connection signal="dropped" from="Item" to="Item" method="_on_dropped"]
+[node name="Item2" parent="." groups=["bottom", "interactable"] instance=ExtResource("4_rux80")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 3, 8, 6)

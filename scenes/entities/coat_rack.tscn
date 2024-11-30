@@ -15,7 +15,7 @@ script = ExtResource("1_o36b8")
 
 [node name="Side 1" type="Node3D" parent="."]
 
-[node name="Arm 1" type="Node3D" parent="Side 1" groups=["item_receiver"]]
+[node name="Arm 1" type="Node3D" parent="Side 1" groups=["bottom", "item_receiver", "top"]]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 12, 4)
 
 [node name="Area3D" type="Area3D" parent="Side 1/Arm 1"]
@@ -26,7 +26,7 @@ shape = SubResource("SphereShape3D_wnoaj")
 [node name="MeshInstance3D" type="MeshInstance3D" parent="Side 1/Arm 1"]
 mesh = SubResource("SphereMesh_arr5m")
 
-[node name="Arm 2" type="Node3D" parent="Side 1" groups=["item_receiver"]]
+[node name="Arm 2" type="Node3D" parent="Side 1" groups=["bottom", "item_receiver", "top"]]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 9, 4)
 
 [node name="Area3D" type="Area3D" parent="Side 1/Arm 2"]
@@ -37,7 +37,7 @@ shape = SubResource("SphereShape3D_wnoaj")
 [node name="MeshInstance3D" type="MeshInstance3D" parent="Side 1/Arm 2"]
 mesh = SubResource("SphereMesh_arr5m")
 
-[node name="Arm 3" type="Node3D" parent="Side 1" groups=["item_receiver"]]
+[node name="Arm 3" type="Node3D" parent="Side 1" groups=["bottom", "item_receiver", "top"]]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 6, 4)
 
 [node name="Area3D" type="Area3D" parent="Side 1/Arm 3"]
@@ -51,7 +51,7 @@ mesh = SubResource("SphereMesh_arr5m")
 [node name="Side 2" type="Node3D" parent="."]
 transform = Transform3D(-0.5, 0, 0.866025, 0, 1, 0, -0.866025, 0, -0.5, 0, 0, 0)
 
-[node name="Arm 1" type="Node3D" parent="Side 2" groups=["item_receiver"]]
+[node name="Arm 1" type="Node3D" parent="Side 2" groups=["bottom", "item_receiver", "top"]]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 12, 4)
 
 [node name="Area3D" type="Area3D" parent="Side 2/Arm 1"]
@@ -62,7 +62,7 @@ shape = SubResource("SphereShape3D_wnoaj")
 [node name="MeshInstance3D" type="MeshInstance3D" parent="Side 2/Arm 1"]
 mesh = SubResource("SphereMesh_arr5m")
 
-[node name="Arm 2" type="Node3D" parent="Side 2" groups=["item_receiver"]]
+[node name="Arm 2" type="Node3D" parent="Side 2" groups=["bottom", "item_receiver", "top"]]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 9, 4)
 
 [node name="Area3D" type="Area3D" parent="Side 2/Arm 2"]
@@ -73,7 +73,7 @@ shape = SubResource("SphereShape3D_wnoaj")
 [node name="MeshInstance3D" type="MeshInstance3D" parent="Side 2/Arm 2"]
 mesh = SubResource("SphereMesh_arr5m")
 
-[node name="Arm 3" type="Node3D" parent="Side 2" groups=["item_receiver"]]
+[node name="Arm 3" type="Node3D" parent="Side 2" groups=["bottom", "item_receiver", "top"]]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 6, 4)
 
 [node name="Area3D" type="Area3D" parent="Side 2/Arm 3"]
@@ -87,7 +87,7 @@ mesh = SubResource("SphereMesh_arr5m")
 [node name="Side 3" type="Node3D" parent="."]
 transform = Transform3D(-0.5, 0, -0.866025, 0, 1, 0, 0.866025, 0, -0.5, 0, 0, 0)
 
-[node name="Arm 1" type="Node3D" parent="Side 3" groups=["item_receiver"]]
+[node name="Arm 1" type="Node3D" parent="Side 3" groups=["bottom", "item_receiver", "top"]]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 12, 4)
 
 [node name="Area3D" type="Area3D" parent="Side 3/Arm 1"]
@@ -98,7 +98,7 @@ shape = SubResource("SphereShape3D_wnoaj")
 [node name="MeshInstance3D" type="MeshInstance3D" parent="Side 3/Arm 1"]
 mesh = SubResource("SphereMesh_arr5m")
 
-[node name="Arm 2" type="Node3D" parent="Side 3" groups=["item_receiver"]]
+[node name="Arm 2" type="Node3D" parent="Side 3" groups=["bottom", "item_receiver", "top"]]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 9, 4)
 
 [node name="Area3D" type="Area3D" parent="Side 3/Arm 2"]
@@ -109,7 +109,7 @@ shape = SubResource("SphereShape3D_wnoaj")
 [node name="MeshInstance3D" type="MeshInstance3D" parent="Side 3/Arm 2"]
 mesh = SubResource("SphereMesh_arr5m")
 
-[node name="Arm 3" type="Node3D" parent="Side 3" groups=["item_receiver"]]
+[node name="Arm 3" type="Node3D" parent="Side 3" groups=["bottom", "item_receiver", "top"]]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 6, 4)
 
 [node name="Area3D" type="Area3D" parent="Side 3/Arm 3"]

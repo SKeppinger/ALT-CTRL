@@ -43,11 +43,11 @@ shape = SubResource("BoxShape3D_dkq37")
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 7.5, 4)
 shape = SubResource("BoxShape3D_76i4q")
 
-[node name="Item" parent="." groups=["hanging", "top"] instance=ExtResource("4_rux80")]
+[node name="Item" parent="." groups=["hanging"] instance=ExtResource("4_rux80")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.033, 8.906, 6)
 
 [node name="Customer" parent="." instance=ExtResource("5_458hy")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 11.798, 5.87, 5.9)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 11.798, 5.87, 6)
 
 [connection signal="area_shape_entered" from="InteractableArea" to="LevelController" method="_on_interactable_area_area_shape_entered"]
 [connection signal="area_shape_exited" from="InteractableArea" to="LevelController" method="_on_interactable_area_area_shape_exited"]

@@ -1,125 +1,94 @@
-[gd_scene load_steps=5 format=3 uid="uid://w32m7l7t3426"]
+[gd_scene load_steps=4 format=3 uid="uid://w32m7l7t3426"]
 
 [ext_resource type="Script" path="res://assets/scripts/coat_rack_controls.gd" id="1_o36b8"]
+[ext_resource type="ArrayMesh" uid="uid://d0c0cnu4eweqh" path="res://assets/models/pCube1.res" id="2_uu2nx"]
 
 [sub_resource type="SphereShape3D" id="SphereShape3D_wnoaj"]
-
-[sub_resource type="SphereMesh" id="SphereMesh_arr5m"]
-
-[sub_resource type="CylinderMesh" id="CylinderMesh_saxoq"]
-bottom_radius = 1.25
-height = 12.0
 
 [node name="CoatRack" type="Node3D" groups=["coat_rack"]]
 script = ExtResource("1_o36b8")
 
 [node name="Side 1" type="Node3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.0867107, 3.42164, -1.40301)
 
 [node name="Arm 1" type="Node3D" parent="Side 1" groups=["bottom", "item_receiver", "top"]]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 12, 4)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 11.9009, 4)
 
 [node name="Area3D" type="Area3D" parent="Side 1/Arm 1"]
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="Side 1/Arm 1/Area3D"]
 shape = SubResource("SphereShape3D_wnoaj")
 
-[node name="MeshInstance3D" type="MeshInstance3D" parent="Side 1/Arm 1"]
-mesh = SubResource("SphereMesh_arr5m")
-
 [node name="Arm 2" type="Node3D" parent="Side 1" groups=["bottom", "item_receiver", "top"]]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 9, 4)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 9.99161, 4)
 
 [node name="Area3D" type="Area3D" parent="Side 1/Arm 2"]
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="Side 1/Arm 2/Area3D"]
 shape = SubResource("SphereShape3D_wnoaj")
 
-[node name="MeshInstance3D" type="MeshInstance3D" parent="Side 1/Arm 2"]
-mesh = SubResource("SphereMesh_arr5m")
-
 [node name="Arm 3" type="Node3D" parent="Side 1" groups=["bottom", "item_receiver", "top"]]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 6, 4)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 7.92723, 4)
 
 [node name="Area3D" type="Area3D" parent="Side 1/Arm 3"]
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="Side 1/Arm 3/Area3D"]
 shape = SubResource("SphereShape3D_wnoaj")
 
-[node name="MeshInstance3D" type="MeshInstance3D" parent="Side 1/Arm 3"]
-mesh = SubResource("SphereMesh_arr5m")
+[node name="MeshInstance3D" type="MeshInstance3D" parent="."]
+transform = Transform3D(67.2299, 0, -240.791, 0, 250, 0, 240.791, 0, 67.2299, 0, 1.6844, 1.1964)
+mesh = ExtResource("2_uu2nx")
 
 [node name="Side 2" type="Node3D" parent="."]
-transform = Transform3D(-0.5, 0, 0.866025, 0, 1, 0, -0.866025, 0, -0.5, 0, 0, 0)
+transform = Transform3D(-0.5, 0, 0.866025, 0, 1, 0, -0.866025, 0, -0.5, -0.17824, 3.349, 2.0315)
 
 [node name="Arm 1" type="Node3D" parent="Side 2" groups=["bottom", "item_receiver", "top"]]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 12, 4)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 11.6739, 4)
 
 [node name="Area3D" type="Area3D" parent="Side 2/Arm 1"]
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="Side 2/Arm 1/Area3D"]
 shape = SubResource("SphereShape3D_wnoaj")
 
-[node name="MeshInstance3D" type="MeshInstance3D" parent="Side 2/Arm 1"]
-mesh = SubResource("SphereMesh_arr5m")
-
 [node name="Arm 2" type="Node3D" parent="Side 2" groups=["bottom", "item_receiver", "top"]]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 9, 4)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 9.99161, 4)
 
 [node name="Area3D" type="Area3D" parent="Side 2/Arm 2"]
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="Side 2/Arm 2/Area3D"]
 shape = SubResource("SphereShape3D_wnoaj")
 
-[node name="MeshInstance3D" type="MeshInstance3D" parent="Side 2/Arm 2"]
-mesh = SubResource("SphereMesh_arr5m")
-
 [node name="Arm 3" type="Node3D" parent="Side 2" groups=["bottom", "item_receiver", "top"]]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 6, 4)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.0617695, 8.01104, 3.96434)
 
 [node name="Area3D" type="Area3D" parent="Side 2/Arm 3"]
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="Side 2/Arm 3/Area3D"]
 shape = SubResource("SphereShape3D_wnoaj")
 
-[node name="MeshInstance3D" type="MeshInstance3D" parent="Side 2/Arm 3"]
-mesh = SubResource("SphereMesh_arr5m")
-
 [node name="Side 3" type="Node3D" parent="."]
-transform = Transform3D(-0.5, 0, -0.866025, 0, 1, 0, 0.866025, 0, -0.5, 0, 0, 0)
+transform = Transform3D(-0.5, 0, -0.866025, 0, 1, 0, 0.866025, 0, -0.5, 2.5187, 3.19956, 0.103488)
 
 [node name="Arm 1" type="Node3D" parent="Side 3" groups=["bottom", "item_receiver", "top"]]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 12, 4)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 11.9009, 4)
 
 [node name="Area3D" type="Area3D" parent="Side 3/Arm 1"]
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="Side 3/Arm 1/Area3D"]
 shape = SubResource("SphereShape3D_wnoaj")
 
-[node name="MeshInstance3D" type="MeshInstance3D" parent="Side 3/Arm 1"]
-mesh = SubResource("SphereMesh_arr5m")
-
 [node name="Arm 2" type="Node3D" parent="Side 3" groups=["bottom", "item_receiver", "top"]]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 9, 4)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 9.99161, 4)
 
 [node name="Area3D" type="Area3D" parent="Side 3/Arm 2"]
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="Side 3/Arm 2/Area3D"]
 shape = SubResource("SphereShape3D_wnoaj")
 
-[node name="MeshInstance3D" type="MeshInstance3D" parent="Side 3/Arm 2"]
-mesh = SubResource("SphereMesh_arr5m")
-
 [node name="Arm 3" type="Node3D" parent="Side 3" groups=["bottom", "item_receiver", "top"]]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 6, 4)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 7.92723, 4)
 
 [node name="Area3D" type="Area3D" parent="Side 3/Arm 3"]
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="Side 3/Arm 3/Area3D"]
 shape = SubResource("SphereShape3D_wnoaj")
-
-[node name="MeshInstance3D" type="MeshInstance3D" parent="Side 3/Arm 3"]
-mesh = SubResource("SphereMesh_arr5m")
-
-[node name="MeshInstance3D" type="MeshInstance3D" parent="."]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 6, 0)
-mesh = SubResource("CylinderMesh_saxoq")

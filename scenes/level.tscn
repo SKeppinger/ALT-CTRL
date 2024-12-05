@@ -21,6 +21,7 @@ port = 1
 unique_name_in_owner = true
 
 [node name="CoatRack" parent="." instance=ExtResource("1_usuw0")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 1)
 
 [node name="Camera3D" type="Camera3D" parent="."]
 transform = Transform3D(0.776201, 0, 0, 0, 0.776201, 0, 0, 0, 0.776201, 0, 9, 20)

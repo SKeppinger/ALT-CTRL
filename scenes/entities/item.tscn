@@ -16,7 +16,6 @@ size = Vector2(6, 12)
 
 [sub_resource type="CylinderShape3D" id="CylinderShape3D_q64hu"]
 height = 4.0
-radius = 1.0
 
 [sub_resource type="PlaneMesh" id="PlaneMesh_hlius"]
 material = SubResource("StandardMaterial3D_sqhap")
@@ -27,7 +26,7 @@ size = Vector2(6, 12)
 script = ExtResource("1_0fp4g")
 
 [node name="ItemArea" type="Area3D" parent="."]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -2.5, 0.5)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.5, -2.5, 1)
 script = ExtResource("2_y4obx")
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="ItemArea"]
@@ -39,7 +38,7 @@ transform = Transform3D(1, 0, 0, 0, -4.37114e-08, -1, 0, 1, -4.37114e-08, 0, 0, 
 mesh = SubResource("PlaneMesh_hnswv")
 
 [node name="DropArea" type="Area3D" parent="."]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -2.5, 0)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.5, -2.5, 0)
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="DropArea"]
 transform = Transform3D(1, 0, 0, 0, -4.37114e-08, -1, 0, 1, -4.37114e-08, 0, 0, -2)

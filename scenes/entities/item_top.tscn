@@ -1,0 +1,54 @@
+[gd_scene load_steps=9 format=3 uid="uid://bcb83sbgp4qi3"]
+
+[ext_resource type="Script" path="res://assets/scripts/item.gd" id="1_0fp4g"]
+[ext_resource type="Script" path="res://assets/scripts/item_area.gd" id="2_y4obx"]
+[ext_resource type="Texture2D" uid="uid://il1uouxlqg1e" path="res://assets/sprites/items/shirt1.png" id="3_uysvr"]
+
+[sub_resource type="SphereShape3D" id="SphereShape3D_5aevo"]
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_353bp"]
+transparency = 1
+albedo_texture = ExtResource("3_uysvr")
+
+[sub_resource type="PlaneMesh" id="PlaneMesh_hnswv"]
+material = SubResource("StandardMaterial3D_353bp")
+size = Vector2(6, 12)
+
+[sub_resource type="CylinderShape3D" id="CylinderShape3D_q64hu"]
+height = 4.0
+
+[sub_resource type="PlaneMesh" id="PlaneMesh_hlius"]
+material = SubResource("StandardMaterial3D_353bp")
+flip_faces = true
+size = Vector2(6, 12)
+
+[node name="TopItem" type="Node3D" groups=["interactable", "top"]]
+script = ExtResource("1_0fp4g")
+
+[node name="ItemArea" type="Area3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 1)
+script = ExtResource("2_y4obx")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="ItemArea"]
+transform = Transform3D(2, 0, 0, 0, 2, 0, 0, 0, 2, 0, 0, 0)
+shape = SubResource("SphereShape3D_5aevo")
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, -4.37114e-08, -1, 0, 1, -4.37114e-08, 0, 0, 0)
+mesh = SubResource("PlaneMesh_hnswv")
+
+[node name="DropArea" type="Area3D" parent="."]
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="DropArea"]
+transform = Transform3D(1, 0, 0, 0, -4.37114e-08, -1, 0, 1, -4.37114e-08, 0, 0, -2)
+shape = SubResource("CylinderShape3D_q64hu")
+
+[node name="MeshInstance3D2" type="MeshInstance3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, -4.37114e-08, -1, 0, 1, -4.37114e-08, 0, 0, 0)
+mesh = SubResource("PlaneMesh_hlius")
+
+[connection signal="dropped" from="." to="." method="_on_dropped"]
+[connection signal="mouse_entered" from="ItemArea" to="ItemArea" method="_on_mouse_entered"]
+[connection signal="mouse_exited" from="ItemArea" to="ItemArea" method="_on_mouse_exited"]
+[connection signal="area_entered" from="DropArea" to="." method="_on_drop_area_area_entered"]
+[connection signal="area_exited" from="DropArea" to="." method="_on_drop_area_area_exited"]

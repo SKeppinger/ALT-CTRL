@@ -47,7 +47,7 @@ func _on_dropped():
 		holding = hovering
 
 func _on_drop_area_area_entered(area):
-	if area.get_parent().is_in_group("item_receiver"):
+	if area.get_parent().is_in_group("item_receiver") and not area.get_parent().is_in_group("holding"):
 		if (area.get_parent().is_in_group("top") and is_in_group("top")) or (area.get_parent().is_in_group("bottom") and is_in_group("bottom")):
 			print("hover")
 			hovering = area

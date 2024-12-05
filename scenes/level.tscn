@@ -3,7 +3,7 @@
 [ext_resource type="PackedScene" uid="uid://w32m7l7t3426" path="res://scenes/entities/coat_rack.tscn" id="1_usuw0"]
 [ext_resource type="PackedScene" uid="uid://buh1m2ydsxnxt" path="res://scenes/utility/player_controller.tscn" id="3_26ppk"]
 [ext_resource type="PackedScene" uid="uid://c4fc78mda3c5n" path="res://scenes/utility/level_controller.tscn" id="3_mwak4"]
-[ext_resource type="PackedScene" uid="uid://bcb83sbgp4qi3" path="res://scenes/entities/item.tscn" id="4_rux80"]
+[ext_resource type="PackedScene" uid="uid://bcb83sbgp4qi3" path="res://scenes/entities/item_top.tscn" id="4_rux80"]
 [ext_resource type="PackedScene" uid="uid://dtpslb75er7h0" path="res://scenes/entities/customer.tscn" id="5_458hy"]
 [ext_resource type="PackedScene" uid="uid://n5e4tx7wut0s" path="res://sercommtest/ser_comm.tscn" id="6_tr6qb"]
 [ext_resource type="PackedScene" uid="uid://sxfwi2cxgdsv" path="res://assets/models/coatrackbutididitgood.fbx" id="7_qupdm"]

@@ -29,6 +29,9 @@ customer=""
 top=""
 bottom=""
 customer_id=""
+coat_rack_arm=""
+indicator=""
+holding=""
 
 [input]
 

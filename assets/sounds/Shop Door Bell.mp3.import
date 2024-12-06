@@ -1,0 +1,19 @@
+[remap]
+
+importer="mp3"
+type="AudioStreamMP3"
+uid="uid://c6tpsnmh5pjpw"
+path="res://.godot/imported/Shop Door Bell.mp3-57f72a9b94ccb65baaff520d6abd5561.mp3str"
+
+[deps]
+
+source_file="res://assets/sounds/Shop Door Bell.mp3"
+dest_files=["res://.godot/imported/Shop Door Bell.mp3-57f72a9b94ccb65baaff520d6abd5561.mp3str"]
+
+[params]
+
+loop=false
+loop_offset=0
+bpm=0
+beat_count=0
+bar_beats=4

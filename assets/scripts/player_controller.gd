@@ -47,6 +47,9 @@ func _process(_delta):
 			node.rotate_y(-0.03)
 	# Read player input for dragging items
 	if held_item and Input.is_action_pressed("left_click"):
+		for indicator in get_tree().get_nodes_in_group("indicator"):
+			if !indicator.get_parent().is_in_group("holding"):
+				indicator.visible = true
 		# Continue dragging the held item
 		if get_mouse_position():
 			held_item.global_position = get_mouse_position()
@@ -60,5 +63,7 @@ func _process(_delta):
 				held_item.clear_holding()
 			held_item.rotation = Vector3(0, 0, 0)
 	elif held_item and Input.is_action_just_released("left_click"):
+		for indicator in get_tree().get_nodes_in_group("indicator"):
+			indicator.visible = false
 		held_item.dropped.emit()
 		held_item = null # Stop holding the item

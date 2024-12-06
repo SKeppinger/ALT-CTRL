@@ -1,4 +1,4 @@
-[gd_scene load_steps=126 format=3 uid="uid://dpywxioj1xlin"]
+[gd_scene load_steps=130 format=3 uid="uid://dpywxioj1xlin"]
 
 [ext_resource type="PackedScene" uid="uid://w32m7l7t3426" path="res://scenes/entities/coat_rack.tscn" id="1_usuw0"]
 [ext_resource type="PackedScene" uid="uid://buh1m2ydsxnxt" path="res://scenes/utility/player_controller.tscn" id="3_26ppk"]
@@ -25,6 +25,7 @@
 [ext_resource type="Texture2D" uid="uid://cxmjontmflydp" path="res://assets/sprites/customers/Chr5_Swimsuit.png" id="17_lyqs2"]
 [ext_resource type="Texture2D" uid="uid://24yfd3lupsfa" path="res://assets/sprites/walking customers/Chr6_Clothing_Walking.png" id="18_jkpgg"]
 [ext_resource type="Texture2D" uid="uid://dgoo3d4b0m4b2" path="res://assets/sprites/walking customers/Chr5_Swimsuit_Walking.png" id="18_qakho"]
+[ext_resource type="Texture2D" uid="uid://ykthc3lr71gi" path="res://assets/sprites/walking customers/Chr3_Swimsuit_Walking.png" id="18_thk02"]
 [ext_resource type="Texture2D" uid="uid://chf0aaugpne5l" path="res://assets/sprites/items/Chr6_Clothing1.png" id="19_v5bhs"]
 [ext_resource type="Texture2D" uid="uid://bxd7yu3k8xjkt" path="res://assets/sprites/items/Chr6_Clothing2.png" id="20_davl7"]
 [ext_resource type="Texture2D" uid="uid://bdkhfnwctmcfh" path="res://assets/sprites/walking customers/Chr7_Clothing_Walking.png" id="21_mtva0"]
@@ -39,6 +40,7 @@
 [ext_resource type="Texture2D" uid="uid://bum6iywamgwtf" path="res://assets/sprites/customers/Chr4_Swimsuit.png" id="32_5500w"]
 [ext_resource type="Texture2D" uid="uid://ngm2kskbh8ty" path="res://assets/sprites/items/Chr4_Clothing1.png" id="38_tbl75"]
 [ext_resource type="Texture2D" uid="uid://d0pvggc7nv0an" path="res://assets/sprites/items/Chr4_Clothing2.png" id="39_snifw"]
+[ext_resource type="Texture2D" uid="uid://d1xqh1e8cea0x" path="res://assets/UI/background_photo1.png" id="41_ld7lh"]
 
 [sub_resource type="BoxShape3D" id="BoxShape3D_rkf3p"]
 size = Vector3(50, 30, 4)
@@ -172,7 +174,7 @@ orientation = 2
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_2thfu"]
 transparency = 1
-albedo_texture = ExtResource("31_0rc3m")
+albedo_texture = ExtResource("18_thk02")
 
 [sub_resource type="PlaneMesh" id="PlaneMesh_uwpse"]
 material = SubResource("StandardMaterial3D_2thfu")
@@ -417,6 +419,15 @@ material = SubResource("StandardMaterial3D_nif7f")
 flip_faces = true
 size = Vector2(6, 12)
 
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_tkixa"]
+albedo_texture = ExtResource("41_ld7lh")
+
+[sub_resource type="PlaneMesh" id="PlaneMesh_n5kdq"]
+material = SubResource("StandardMaterial3D_tkixa")
+size = Vector2(50, 30)
+center_offset = Vector3(0, 0, -1)
+orientation = 2
+
 [node name="Level" type="Node3D"]
 
 [node name="SerComm" parent="." instance=ExtResource("6_tr6qb")]
@@ -436,7 +447,10 @@ size = 48.143
 omni_range = 4096.0
 omni_attenuation = 0.0
 
-[node name="LevelController" parent="." instance=ExtResource("3_mwak4")]
+[node name="LevelController" parent="." node_paths=PackedStringArray("arriving_customers") instance=ExtResource("3_mwak4")]
+arriving_customers = [NodePath("../Customer1"), NodePath("../Customer2"), NodePath("../Customer3"), NodePath("../Customer4"), NodePath("../Customer5"), NodePath("../Customer6")]
+enter_times = Array[float]([3.0, 8.0, 6.0, 6.0, 6.0, 8.0])
+leave_times = Array[float]([14.0, 12.0, 9.0, 13.0, 9.0, 7.0])
 
 [node name="PlayerController" parent="." instance=ExtResource("3_26ppk")]
 
@@ -454,7 +468,7 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 7.5, 4)
 shape = SubResource("BoxShape3D_onlbo")
 
 [node name="Customer1" parent="." groups=["customer_id"] instance=ExtResource("5_hjw1m")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -28, 2, 0)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -28, 1.4, 0)
 
 [node name="EntranceWalkingMesh" parent="Customer1/Customer" index="0"]
 mesh = SubResource("PlaneMesh_hxesr")
@@ -498,7 +512,7 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.0612106, -3.53847, 0)
 mesh = SubResource("PlaneMesh_nr8nq")
 
 [node name="Customer2" parent="." groups=["customer_id"] instance=ExtResource("5_hjw1m")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -32, 2, 0)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -32, 1.4, 0)
 id = 1
 
 [node name="EntranceWalkingMesh" parent="Customer2/Customer" index="0"]
@@ -552,7 +566,7 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.158184, -5.34936, 0)
 mesh = SubResource("PlaneMesh_0irc3")
 
 [node name="Customer3" parent="." groups=["customer_id"] instance=ExtResource("5_hjw1m")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -40, 2, 0)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -40, 1.4, 0)
 id = -6
 
 [node name="EntranceWalkingMesh" parent="Customer3/Customer" index="0"]
@@ -591,7 +605,7 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.348328, -4.28441, 0)
 mesh = SubResource("PlaneMesh_iujbj")
 
 [node name="Customer4" parent="." groups=["customer_id"] instance=ExtResource("5_hjw1m")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -44, 2, 0)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -44, 1.4, 0)
 id = 3
 
 [node name="EntranceWalkingMesh" parent="Customer4/Customer" index="0"]
@@ -636,7 +650,7 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.0558014, -3.90413, 0)
 mesh = SubResource("PlaneMesh_g5xbn")
 
 [node name="Customer5" parent="." groups=["customer_id"] instance=ExtResource("5_hjw1m")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -48, 2, 0)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -48, 1.4, 0)
 id = 4
 
 [node name="EntranceWalkingMesh" parent="Customer5/Customer" index="0"]
@@ -681,7 +695,7 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.0758362, -4.51843, 0)
 mesh = SubResource("PlaneMesh_snxic")
 
 [node name="Customer6" parent="." groups=["customer_id"] instance=ExtResource("5_hjw1m")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -52, 2, 0)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -52, 1.4, 0)
 id = 5
 
 [node name="EntranceWalkingMesh" parent="Customer6/Customer" index="0"]
@@ -729,7 +743,7 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.626228, -4.43067, 0)
 mesh = SubResource("PlaneMesh_7afjo")
 
 [node name="Customer7" parent="." groups=["customer_id"] instance=ExtResource("5_hjw1m")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -36, 2, 0)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -36, 1.4, 0)
 id = 6
 
 [node name="EntranceWalkingMesh" parent="Customer7/Customer" index="0"]
@@ -766,6 +780,10 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.272247, -4.44606, 0)
 
 [node name="BackMesh" parent="Customer7/BottomItem" index="3"]
 mesh = SubResource("PlaneMesh_4d40g")
+
+[node name="Background" type="MeshInstance3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 8.91829, 0)
+mesh = SubResource("PlaneMesh_n5kdq")
 
 [editable path="Customer1"]
 [editable path="Customer1/TopItem"]

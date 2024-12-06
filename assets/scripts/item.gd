@@ -50,15 +50,18 @@ func _on_dropped():
 		else:
 			add_to_group("worn")
 			print("worn")
-		hovering.add_to_group("holding")
-		holding = hovering
+		hovering.get_parent().add_to_group("holding")
+		holding = hovering.get_parent()
 
 func _on_drop_area_area_entered(area):
 	if area.get_parent().is_in_group("item_receiver") and not area.get_parent().is_in_group("holding"):
 		if (area.get_parent().is_in_group("top") and is_in_group("top")) or (area.get_parent().is_in_group("bottom") and is_in_group("bottom")):
-			print("hover")
-			hovering = area
-			area.add_to_group("hovering")
+			print(area.get_parent().get_parent())
+			print(get_parent())
+			if area.get_parent().is_in_group("coat_rack_arm") or area.get_parent().get_parent().get_parent() == get_parent():
+				print("hover")
+				hovering = area
+				area.add_to_group("hovering")
 
 func _on_drop_area_area_exited(area):
 	if area.is_in_group("hovering"):

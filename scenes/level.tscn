@@ -481,6 +481,9 @@ mesh = SubResource("PlaneMesh_6ntuo")
 visible = false
 mesh = SubResource("PlaneMesh_pd3bx")
 
+[node name="Wrong" parent="Customer1/Customer" index="3"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 5.76664, 0)
+
 [node name="TopItem" parent="Customer1" index="1"]
 visible = false
 
@@ -526,10 +529,13 @@ mesh = SubResource("PlaneMesh_hrfuq")
 visible = false
 mesh = SubResource("PlaneMesh_irirc")
 
+[node name="Wrong" parent="Customer2/Customer" index="3"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 2.96636, 0)
+
 [node name="TopArea" parent="Customer2/Customer/Top Half" index="0"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -2.503, 0)
 
-[node name="Bottom Half" parent="Customer2/Customer" index="4"]
+[node name="Bottom Half" parent="Customer2/Customer" index="5"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -2.417, 0)
 
 [node name="Bottom Area" parent="Customer2/Customer/Bottom Half" index="0"]
@@ -580,6 +586,9 @@ mesh = SubResource("PlaneMesh_gilgj")
 visible = false
 mesh = SubResource("PlaneMesh_uwpse")
 
+[node name="Wrong" parent="Customer3/Customer" index="3"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 7.32235, 0)
+
 [node name="TopItem" parent="Customer3" index="1"]
 visible = false
 
@@ -618,6 +627,9 @@ mesh = SubResource("PlaneMesh_hkrvc")
 [node name="ExitWalkingMesh" parent="Customer4/Customer" index="2"]
 visible = false
 mesh = SubResource("PlaneMesh_y3fyv")
+
+[node name="Wrong" parent="Customer4/Customer" index="3"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 6.5445, 0)
 
 [node name="TopItem" parent="Customer4" index="1"]
 visible = false
@@ -664,6 +676,9 @@ mesh = SubResource("PlaneMesh_wshrp")
 visible = false
 mesh = SubResource("PlaneMesh_q5ytq")
 
+[node name="Wrong" parent="Customer5/Customer" index="3"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 6.62229, 0)
+
 [node name="TopItem" parent="Customer5" index="1"]
 visible = false
 
@@ -709,7 +724,10 @@ mesh = SubResource("PlaneMesh_n234t")
 visible = false
 mesh = SubResource("PlaneMesh_3n0ek")
 
-[node name="Top Half" parent="Customer6/Customer" index="3"]
+[node name="Wrong" parent="Customer6/Customer" index="3"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 7.24457, 0)
+
+[node name="Top Half" parent="Customer6/Customer" index="4"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 3.26026, 0)
 
 [node name="TopItem" parent="Customer6" index="1"]
@@ -756,6 +774,9 @@ mesh = SubResource("PlaneMesh_o1fp1")
 [node name="ExitWalkingMesh" parent="Customer7/Customer" index="2"]
 visible = false
 mesh = SubResource("PlaneMesh_ssevr")
+
+[node name="Wrong" parent="Customer7/Customer" index="3"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 7.47793, 0)
 
 [node name="TopItem" parent="Customer7" index="1"]
 visible = false

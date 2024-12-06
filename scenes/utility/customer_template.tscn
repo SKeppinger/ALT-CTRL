@@ -1,8 +1,18 @@
-[gd_scene load_steps=5 format=3 uid="uid://c7eova41djrk4"]
+[gd_scene load_steps=8 format=3 uid="uid://c7eova41djrk4"]
 
 [ext_resource type="Script" path="res://assets/scripts/customer_controller.gd" id="1_pep2p"]
+[ext_resource type="Texture2D" uid="uid://b4ym1q6t2pf3y" path="res://assets/UI/wrongclothes.png" id="2_7kh4e"]
 [ext_resource type="PackedScene" uid="uid://bcb83sbgp4qi3" path="res://scenes/entities/item_top.tscn" id="2_pijhb"]
 [ext_resource type="PackedScene" uid="uid://ch1a8x2ekbsr0" path="res://scenes/entities/item_bottom.tscn" id="3_j203n"]
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_hlrpo"]
+transparency = 1
+albedo_texture = ExtResource("2_7kh4e")
+
+[sub_resource type="PlaneMesh" id="PlaneMesh_05bl2"]
+material = SubResource("StandardMaterial3D_hlrpo")
+size = Vector2(3, 3)
+orientation = 2
 
 [sub_resource type="SphereShape3D" id="SphereShape3D_lmwng"]
 radius = 3.0
@@ -17,6 +27,11 @@ script = ExtResource("1_pep2p")
 [node name="IdleMesh" type="MeshInstance3D" parent="Customer"]
 
 [node name="ExitWalkingMesh" type="MeshInstance3D" parent="Customer"]
+
+[node name="Wrong" type="MeshInstance3D" parent="Customer"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 6, 0)
+visible = false
+mesh = SubResource("PlaneMesh_05bl2")
 
 [node name="Top Half" type="Node3D" parent="Customer" groups=["item_receiver", "top"]]
 
@@ -43,3 +58,4 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 0.1)
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 0.1)
 
 [node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="."]
+volume_db = -20.0

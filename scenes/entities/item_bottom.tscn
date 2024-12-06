@@ -32,6 +32,9 @@ shape = SubResource("CylinderShape3D_q64hu")
 [node name="BackMesh" type="MeshInstance3D" parent="."]
 transform = Transform3D(1, 0, 0, 0, -4.37114e-08, -1, 0, 1, -4.37114e-08, 0, 0, 0)
 
+[node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="."]
+volume_db = -20.0
+
 [connection signal="dropped" from="." to="." method="_on_dropped"]
 [connection signal="mouse_entered" from="ItemArea" to="ItemArea" method="_on_mouse_entered"]
 [connection signal="mouse_exited" from="ItemArea" to="ItemArea" method="_on_mouse_exited"]

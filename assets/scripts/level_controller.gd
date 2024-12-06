@@ -25,7 +25,6 @@ func _process(delta):
 			enter_timer += delta
 	if len(leaving_customers) > 0 and leaving_customers[0].state == 0:
 		leave_timer += delta
-		print(leave_timer)
 	# ENTERING
 	if len(enter_times) > 0 and enter_timer >= enter_times[0]:
 		var wait = false

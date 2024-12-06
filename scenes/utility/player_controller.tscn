@@ -4,3 +4,5 @@
 
 [node name="PlayerController" type="Node3D"]
 script = ExtResource("1_bs4p0")
+
+[node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="."]

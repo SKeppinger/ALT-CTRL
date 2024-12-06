@@ -1,19 +1,41 @@
-[gd_scene load_steps=5 format=3 uid="uid://c7eova41djrk4"]
+[gd_scene load_steps=6 format=3 uid="uid://c7eova41djrk4"]
 
 [ext_resource type="Script" path="res://assets/scripts/customer_controller.gd" id="1_pep2p"]
-[ext_resource type="PackedScene" uid="uid://dtpslb75er7h0" path="res://scenes/entities/customer.tscn" id="1_xpoih"]
+[ext_resource type="Script" path="res://assets/scripts/customer.gd" id="2_a07a6"]
 [ext_resource type="PackedScene" uid="uid://bcb83sbgp4qi3" path="res://scenes/entities/item_top.tscn" id="2_pijhb"]
 [ext_resource type="PackedScene" uid="uid://ch1a8x2ekbsr0" path="res://scenes/entities/item_bottom.tscn" id="3_j203n"]
+
+[sub_resource type="SphereShape3D" id="SphereShape3D_0tjba"]
+radius = 3.0
 
 [node name="CustomerTemplate" type="Node3D"]
 script = ExtResource("1_pep2p")
 
-[node name="Customer" parent="." instance=ExtResource("1_xpoih")]
+[node name="Customer" type="Node3D" parent="." groups=["customer"]]
+script = ExtResource("2_a07a6")
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="Customer"]
+
+[node name="Top Half" type="Node3D" parent="Customer" groups=["item_receiver", "top"]]
+
+[node name="TopArea" type="Area3D" parent="Customer/Top Half"]
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Customer/Top Half/TopArea"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, -3)
+shape = SubResource("SphereShape3D_0tjba")
+
+[node name="Bottom Half" type="Node3D" parent="Customer" groups=["bottom", "item_receiver"]]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -2.41658, 0)
+
+[node name="Bottom Area" type="Area3D" parent="Customer/Bottom Half"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -0.142151, 0)
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Customer/Bottom Half/Bottom Area"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, -3)
+shape = SubResource("SphereShape3D_0tjba")
 
 [node name="TopItem" parent="." instance=ExtResource("2_pijhb")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 0.1)
 
 [node name="BottomItem" parent="." instance=ExtResource("3_j203n")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 0.1)
-
-[editable path="Customer"]

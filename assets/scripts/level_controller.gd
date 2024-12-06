@@ -1,8 +1,12 @@
 extends Node3D
 
+# These should all be the same length
 @export var arriving_customers: Array[Node3D]
+@export var enter_times: Array[int]
+@export var leave_times: Array[int]
 
-var leaving_customers = []
+var customer_waiting_left = false
+var customer_waiting_right = false
 
 # Called when the node enters the scene tree for the first time.
 func _ready():

@@ -1,16 +1,234 @@
-[gd_scene load_steps=8 format=3 uid="uid://dpywxioj1xlin"]
+[gd_scene load_steps=74 format=3 uid="uid://dpywxioj1xlin"]
 
 [ext_resource type="PackedScene" uid="uid://w32m7l7t3426" path="res://scenes/entities/coat_rack.tscn" id="1_usuw0"]
 [ext_resource type="PackedScene" uid="uid://buh1m2ydsxnxt" path="res://scenes/utility/player_controller.tscn" id="3_26ppk"]
 [ext_resource type="PackedScene" uid="uid://c4fc78mda3c5n" path="res://scenes/utility/level_controller.tscn" id="3_mwak4"]
 [ext_resource type="PackedScene" uid="uid://c7eova41djrk4" path="res://scenes/utility/customer_template.tscn" id="5_hjw1m"]
 [ext_resource type="PackedScene" uid="uid://n5e4tx7wut0s" path="res://sercommtest/ser_comm.tscn" id="6_tr6qb"]
+[ext_resource type="Texture2D" uid="uid://c6qc4b0vuandc" path="res://assets/sprites/walking customers/Chr1_Clothing_Walking.png" id="6_x1tku"]
+[ext_resource type="Texture2D" uid="uid://du5puyqqfqsem" path="res://assets/sprites/items/Chr1_Clothing1.png" id="7_ysg8u"]
+[ext_resource type="Texture2D" uid="uid://bpuwobba7tmg7" path="res://assets/sprites/items/Chr1_Clothing2.png" id="8_8nxer"]
+[ext_resource type="Texture2D" uid="uid://b0c6ounxefjqb" path="res://assets/sprites/walking customers/Chr2_Clothing_Walking.png" id="9_ws1q3"]
+[ext_resource type="Texture2D" uid="uid://bjrq84by2npui" path="res://assets/sprites/items/Chr2_Clothing1.png" id="10_jhef6"]
+[ext_resource type="Texture2D" uid="uid://cutuouysn7m76" path="res://assets/sprites/items/Chr2_Clothing2.png" id="11_sli3e"]
+[ext_resource type="Texture2D" uid="uid://cg0c7ib54u37g" path="res://assets/sprites/walking customers/Chr3_Clothing_Walking.png" id="12_jnf1h"]
+[ext_resource type="Texture2D" uid="uid://cv27yudaws4wc" path="res://assets/sprites/items/Chr3_Clothing1.png" id="13_xq18q"]
+[ext_resource type="Texture2D" uid="uid://byxikkx0x6yxs" path="res://assets/sprites/items/Chr3_Clothing2.png" id="14_38r46"]
+[ext_resource type="Texture2D" uid="uid://byd6medagbx3r" path="res://assets/sprites/walking customers/Chr5_Clothing_Walking.png" id="15_w1c1e"]
+[ext_resource type="Texture2D" uid="uid://dmhw5y0epfxl4" path="res://assets/sprites/items/Chr5_Clothing1.png" id="16_ua432"]
+[ext_resource type="Texture2D" uid="uid://b4r53jhiw6580" path="res://assets/sprites/items/Chr5_Clothing2.png" id="17_fdgdg"]
+[ext_resource type="Texture2D" uid="uid://24yfd3lupsfa" path="res://assets/sprites/walking customers/Chr6_Clothing_Walking.png" id="18_jkpgg"]
+[ext_resource type="Texture2D" uid="uid://chf0aaugpne5l" path="res://assets/sprites/items/Chr6_Clothing1.png" id="19_v5bhs"]
+[ext_resource type="Texture2D" uid="uid://bxd7yu3k8xjkt" path="res://assets/sprites/items/Chr6_Clothing2.png" id="20_davl7"]
+[ext_resource type="Texture2D" uid="uid://bdkhfnwctmcfh" path="res://assets/sprites/walking customers/Chr7_Clothing_Walking.png" id="21_mtva0"]
+[ext_resource type="Texture2D" uid="uid://if8wsp84f2nr" path="res://assets/sprites/items/Chr7_Clothing1.png" id="22_2ce1c"]
+[ext_resource type="Texture2D" uid="uid://61b0u0saud3e" path="res://assets/sprites/items/Chr7_Clothing2.png" id="23_i12lt"]
 
 [sub_resource type="BoxShape3D" id="BoxShape3D_rkf3p"]
 size = Vector3(50, 30, 4)
 
 [sub_resource type="BoxShape3D" id="BoxShape3D_onlbo"]
 size = Vector3(50, 30, 0.01)
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_xwx6l"]
+transparency = 1
+albedo_texture = ExtResource("6_x1tku")
+
+[sub_resource type="PlaneMesh" id="PlaneMesh_fsioh"]
+material = SubResource("StandardMaterial3D_xwx6l")
+size = Vector2(6, 12)
+orientation = 2
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_1b2nv"]
+transparency = 1
+albedo_texture = ExtResource("7_ysg8u")
+
+[sub_resource type="PlaneMesh" id="PlaneMesh_mwnjb"]
+material = SubResource("StandardMaterial3D_1b2nv")
+size = Vector2(6, 12)
+
+[sub_resource type="PlaneMesh" id="PlaneMesh_715ye"]
+material = SubResource("StandardMaterial3D_1b2nv")
+flip_faces = true
+size = Vector2(6, 12)
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_mnaxf"]
+transparency = 1
+albedo_texture = ExtResource("8_8nxer")
+
+[sub_resource type="PlaneMesh" id="PlaneMesh_t0hgl"]
+material = SubResource("StandardMaterial3D_mnaxf")
+size = Vector2(6, 12)
+
+[sub_resource type="PlaneMesh" id="PlaneMesh_nr8nq"]
+material = SubResource("StandardMaterial3D_mnaxf")
+flip_faces = true
+size = Vector2(6, 12)
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_iw3tk"]
+transparency = 1
+albedo_texture = ExtResource("9_ws1q3")
+
+[sub_resource type="PlaneMesh" id="PlaneMesh_3y6bg"]
+material = SubResource("StandardMaterial3D_iw3tk")
+size = Vector2(6, 12)
+orientation = 2
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_bv1xx"]
+transparency = 1
+albedo_texture = ExtResource("10_jhef6")
+
+[sub_resource type="PlaneMesh" id="PlaneMesh_1qx84"]
+material = SubResource("StandardMaterial3D_bv1xx")
+size = Vector2(6, 12)
+
+[sub_resource type="PlaneMesh" id="PlaneMesh_8hgel"]
+material = SubResource("StandardMaterial3D_bv1xx")
+size = Vector2(6, 12)
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_ab8yg"]
+transparency = 1
+albedo_texture = ExtResource("11_sli3e")
+
+[sub_resource type="PlaneMesh" id="PlaneMesh_55ljj"]
+material = SubResource("StandardMaterial3D_ab8yg")
+size = Vector2(6, 12)
+
+[sub_resource type="PlaneMesh" id="PlaneMesh_0irc3"]
+material = SubResource("StandardMaterial3D_ab8yg")
+size = Vector2(6, 12)
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_iaepq"]
+transparency = 1
+albedo_texture = ExtResource("12_jnf1h")
+
+[sub_resource type="PlaneMesh" id="PlaneMesh_2ov88"]
+material = SubResource("StandardMaterial3D_iaepq")
+size = Vector2(6, 12)
+orientation = 2
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_ublsk"]
+transparency = 1
+albedo_texture = ExtResource("13_xq18q")
+
+[sub_resource type="PlaneMesh" id="PlaneMesh_wohry"]
+material = SubResource("StandardMaterial3D_ublsk")
+size = Vector2(6, 12)
+
+[sub_resource type="PlaneMesh" id="PlaneMesh_a2xcp"]
+material = SubResource("StandardMaterial3D_ublsk")
+size = Vector2(6, 12)
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_ft2jy"]
+transparency = 1
+albedo_texture = ExtResource("14_38r46")
+
+[sub_resource type="PlaneMesh" id="PlaneMesh_5l7gn"]
+material = SubResource("StandardMaterial3D_ft2jy")
+size = Vector2(6, 12)
+
+[sub_resource type="PlaneMesh" id="PlaneMesh_iujbj"]
+material = SubResource("StandardMaterial3D_ft2jy")
+size = Vector2(6, 12)
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_r6iqp"]
+transparency = 1
+albedo_texture = ExtResource("15_w1c1e")
+
+[sub_resource type="PlaneMesh" id="PlaneMesh_3tcp4"]
+material = SubResource("StandardMaterial3D_r6iqp")
+size = Vector2(6, 12)
+orientation = 2
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_jn3hx"]
+transparency = 1
+albedo_texture = ExtResource("16_ua432")
+
+[sub_resource type="PlaneMesh" id="PlaneMesh_wcsgn"]
+material = SubResource("StandardMaterial3D_jn3hx")
+size = Vector2(6, 12)
+
+[sub_resource type="PlaneMesh" id="PlaneMesh_y0tfg"]
+material = SubResource("StandardMaterial3D_jn3hx")
+size = Vector2(6, 12)
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_8gpy0"]
+transparency = 1
+albedo_texture = ExtResource("17_fdgdg")
+
+[sub_resource type="PlaneMesh" id="PlaneMesh_l7yj5"]
+material = SubResource("StandardMaterial3D_8gpy0")
+size = Vector2(6, 12)
+
+[sub_resource type="PlaneMesh" id="PlaneMesh_g5xbn"]
+material = SubResource("StandardMaterial3D_8gpy0")
+size = Vector2(6, 12)
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_kksgd"]
+transparency = 1
+albedo_texture = ExtResource("18_jkpgg")
+
+[sub_resource type="PlaneMesh" id="PlaneMesh_byi1p"]
+material = SubResource("StandardMaterial3D_kksgd")
+size = Vector2(6, 12)
+orientation = 2
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_vqppi"]
+transparency = 1
+albedo_texture = ExtResource("19_v5bhs")
+
+[sub_resource type="PlaneMesh" id="PlaneMesh_yvmbc"]
+material = SubResource("StandardMaterial3D_vqppi")
+size = Vector2(6, 12)
+
+[sub_resource type="PlaneMesh" id="PlaneMesh_gikp1"]
+material = SubResource("StandardMaterial3D_vqppi")
+size = Vector2(6, 12)
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_2dhva"]
+transparency = 1
+albedo_texture = ExtResource("20_davl7")
+
+[sub_resource type="PlaneMesh" id="PlaneMesh_1ljvn"]
+material = SubResource("StandardMaterial3D_2dhva")
+size = Vector2(6, 12)
+
+[sub_resource type="PlaneMesh" id="PlaneMesh_snxic"]
+material = SubResource("StandardMaterial3D_2dhva")
+size = Vector2(6, 12)
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_kwhb8"]
+transparency = 1
+albedo_texture = ExtResource("21_mtva0")
+
+[sub_resource type="PlaneMesh" id="PlaneMesh_fxm8l"]
+material = SubResource("StandardMaterial3D_kwhb8")
+size = Vector2(6, 12)
+orientation = 2
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_lx5j4"]
+transparency = 1
+albedo_texture = ExtResource("22_2ce1c")
+
+[sub_resource type="PlaneMesh" id="PlaneMesh_r57dl"]
+material = SubResource("StandardMaterial3D_lx5j4")
+size = Vector2(6, 12)
+
+[sub_resource type="PlaneMesh" id="PlaneMesh_0mt8r"]
+material = SubResource("StandardMaterial3D_lx5j4")
+size = Vector2(6, 12)
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_3l8d1"]
+transparency = 1
+albedo_texture = ExtResource("23_i12lt")
+
+[sub_resource type="PlaneMesh" id="PlaneMesh_t6go8"]
+material = SubResource("StandardMaterial3D_3l8d1")
+size = Vector2(6, 12)
+
+[sub_resource type="PlaneMesh" id="PlaneMesh_7afjo"]
+material = SubResource("StandardMaterial3D_3l8d1")
+size = Vector2(6, 12)
 
 [node name="Level" type="Node3D"]
 
@@ -49,8 +267,191 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 7.5, 4)
 shape = SubResource("BoxShape3D_onlbo")
 
 [node name="Customer1" parent="." instance=ExtResource("5_hjw1m")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -15, 0, 0)
-id = 1
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -28, 0, 0)
+
+[node name="MeshInstance3D" parent="Customer1/Customer" index="0"]
+mesh = SubResource("PlaneMesh_fsioh")
+
+[node name="TopItem" parent="Customer1" index="1"]
+visible = false
+
+[node name="FrontMesh" parent="Customer1/TopItem" index="1"]
+mesh = SubResource("PlaneMesh_mwnjb")
+
+[node name="BackMesh" parent="Customer1/TopItem" index="3"]
+mesh = SubResource("PlaneMesh_715ye")
+
+[node name="BottomItem" parent="Customer1" index="2"]
+visible = false
+
+[node name="FrontMesh" parent="Customer1/BottomItem" index="1"]
+mesh = SubResource("PlaneMesh_t0hgl")
+
+[node name="BackMesh" parent="Customer1/BottomItem" index="3"]
+mesh = SubResource("PlaneMesh_nr8nq")
+
+[node name="Customer2" parent="." instance=ExtResource("5_hjw1m")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -32, 0, 0)
+
+[node name="MeshInstance3D" parent="Customer2/Customer" index="0"]
+mesh = SubResource("PlaneMesh_3y6bg")
+
+[node name="Top Half" parent="Customer2/Customer" index="1"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -2.50291, 0)
+
+[node name="Bottom Half" parent="Customer2/Customer" index="2"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -5.08033, 0)
+
+[node name="TopItem" parent="Customer2" index="1"]
+visible = false
+
+[node name="ItemArea" parent="Customer2/TopItem" index="0"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -3.67433, 1)
+
+[node name="FrontMesh" parent="Customer2/TopItem" index="1"]
+mesh = SubResource("PlaneMesh_1qx84")
+
+[node name="DropArea" parent="Customer2/TopItem" index="2"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -3.67433, 0)
+
+[node name="BackMesh" parent="Customer2/TopItem" index="3"]
+mesh = SubResource("PlaneMesh_8hgel")
+
+[node name="BottomItem" parent="Customer2" index="2"]
+visible = false
+
+[node name="ItemArea" parent="Customer2/BottomItem" index="0"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.5, -5.34936, 1)
+
+[node name="FrontMesh" parent="Customer2/BottomItem" index="1"]
+mesh = SubResource("PlaneMesh_55ljj")
+
+[node name="DropArea" parent="Customer2/BottomItem" index="2"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.5, -5.34936, 0)
+
+[node name="BackMesh" parent="Customer2/BottomItem" index="3"]
+mesh = SubResource("PlaneMesh_0irc3")
+
+[node name="Customer3" parent="." instance=ExtResource("5_hjw1m")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -36, 0, 0)
+
+[node name="MeshInstance3D" parent="Customer3/Customer" index="0"]
+mesh = SubResource("PlaneMesh_2ov88")
+
+[node name="TopItem" parent="Customer3" index="1"]
+visible = false
+
+[node name="FrontMesh" parent="Customer3/TopItem" index="1"]
+mesh = SubResource("PlaneMesh_wohry")
+
+[node name="BackMesh" parent="Customer3/TopItem" index="3"]
+mesh = SubResource("PlaneMesh_a2xcp")
+
+[node name="BottomItem" parent="Customer3" index="2"]
+visible = false
+
+[node name="FrontMesh" parent="Customer3/BottomItem" index="1"]
+mesh = SubResource("PlaneMesh_5l7gn")
+
+[node name="BackMesh" parent="Customer3/BottomItem" index="3"]
+mesh = SubResource("PlaneMesh_iujbj")
+
+[node name="Customer4" parent="." instance=ExtResource("5_hjw1m")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -40, 0, 0)
+
+[node name="MeshInstance3D" parent="Customer4/Customer" index="0"]
+mesh = SubResource("PlaneMesh_3tcp4")
+
+[node name="TopItem" parent="Customer4" index="1"]
+visible = false
+
+[node name="FrontMesh" parent="Customer4/TopItem" index="1"]
+mesh = SubResource("PlaneMesh_wcsgn")
+
+[node name="BackMesh" parent="Customer4/TopItem" index="3"]
+mesh = SubResource("PlaneMesh_y0tfg")
+
+[node name="BottomItem" parent="Customer4" index="2"]
+visible = false
+
+[node name="FrontMesh" parent="Customer4/BottomItem" index="1"]
+mesh = SubResource("PlaneMesh_l7yj5")
+
+[node name="BackMesh" parent="Customer4/BottomItem" index="3"]
+mesh = SubResource("PlaneMesh_g5xbn")
+
+[node name="Customer5" parent="." instance=ExtResource("5_hjw1m")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -44, 0, 0)
+
+[node name="MeshInstance3D" parent="Customer5/Customer" index="0"]
+mesh = SubResource("PlaneMesh_byi1p")
+
+[node name="TopItem" parent="Customer5" index="1"]
+visible = false
+
+[node name="FrontMesh" parent="Customer5/TopItem" index="1"]
+mesh = SubResource("PlaneMesh_yvmbc")
+
+[node name="BackMesh" parent="Customer5/TopItem" index="3"]
+mesh = SubResource("PlaneMesh_gikp1")
+
+[node name="BottomItem" parent="Customer5" index="2"]
+visible = false
+
+[node name="FrontMesh" parent="Customer5/BottomItem" index="1"]
+mesh = SubResource("PlaneMesh_1ljvn")
+
+[node name="BackMesh" parent="Customer5/BottomItem" index="3"]
+mesh = SubResource("PlaneMesh_snxic")
+
+[node name="Customer6" parent="." instance=ExtResource("5_hjw1m")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -48, 0, 0)
+
+[node name="MeshInstance3D" parent="Customer6/Customer" index="0"]
+mesh = SubResource("PlaneMesh_fxm8l")
+
+[node name="Top Half" parent="Customer6/Customer" index="1"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 3.26026, 0)
+
+[node name="TopItem" parent="Customer6" index="1"]
+visible = false
+
+[node name="ItemArea" parent="Customer6/TopItem" index="0"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 3.87357, 1)
+
+[node name="FrontMesh" parent="Customer6/TopItem" index="1"]
+mesh = SubResource("PlaneMesh_r57dl")
+
+[node name="DropArea" parent="Customer6/TopItem" index="2"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 3.87357, 0)
+
+[node name="BackMesh" parent="Customer6/TopItem" index="3"]
+mesh = SubResource("PlaneMesh_0mt8r")
+
+[node name="BottomItem" parent="Customer6" index="2"]
+visible = false
+
+[node name="FrontMesh" parent="Customer6/BottomItem" index="1"]
+mesh = SubResource("PlaneMesh_t6go8")
+
+[node name="BackMesh" parent="Customer6/BottomItem" index="3"]
+mesh = SubResource("PlaneMesh_7afjo")
 
 [editable path="Customer1"]
-[editable path="Customer1/Customer"]
+[editable path="Customer1/TopItem"]
+[editable path="Customer1/BottomItem"]
+[editable path="Customer2"]
+[editable path="Customer2/TopItem"]
+[editable path="Customer2/BottomItem"]
+[editable path="Customer3"]
+[editable path="Customer3/TopItem"]
+[editable path="Customer3/BottomItem"]
+[editable path="Customer4"]
+[editable path="Customer4/TopItem"]
+[editable path="Customer4/BottomItem"]
+[editable path="Customer5"]
+[editable path="Customer5/TopItem"]
+[editable path="Customer5/BottomItem"]
+[editable path="Customer6"]
+[editable path="Customer6/TopItem"]
+[editable path="Customer6/BottomItem"]

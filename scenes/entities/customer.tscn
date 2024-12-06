@@ -1,10 +1,6 @@
-[gd_scene load_steps=4 format=3 uid="uid://dtpslb75er7h0"]
+[gd_scene load_steps=3 format=3 uid="uid://dtpslb75er7h0"]
 
 [ext_resource type="Script" path="res://assets/scripts/customer.gd" id="1_qhclh"]
-
-[sub_resource type="PlaneMesh" id="PlaneMesh_b4nkj"]
-size = Vector2(6, 12)
-orientation = 2
 
 [sub_resource type="SphereShape3D" id="SphereShape3D_0tjba"]
 radius = 3.0
@@ -13,7 +9,6 @@ radius = 3.0
 script = ExtResource("1_qhclh")
 
 [node name="MeshInstance3D" type="MeshInstance3D" parent="."]
-mesh = SubResource("PlaneMesh_b4nkj")
 
 [node name="Top Half" type="Node3D" parent="." groups=["item_receiver", "top"]]
 

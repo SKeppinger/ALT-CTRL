@@ -1,12 +1,10 @@
-[gd_scene load_steps=10 format=3 uid="uid://dpywxioj1xlin"]
+[gd_scene load_steps=8 format=3 uid="uid://dpywxioj1xlin"]
 
 [ext_resource type="PackedScene" uid="uid://w32m7l7t3426" path="res://scenes/entities/coat_rack.tscn" id="1_usuw0"]
 [ext_resource type="PackedScene" uid="uid://buh1m2ydsxnxt" path="res://scenes/utility/player_controller.tscn" id="3_26ppk"]
 [ext_resource type="PackedScene" uid="uid://c4fc78mda3c5n" path="res://scenes/utility/level_controller.tscn" id="3_mwak4"]
-[ext_resource type="PackedScene" uid="uid://bcb83sbgp4qi3" path="res://scenes/entities/item_top.tscn" id="4_rux80"]
-[ext_resource type="PackedScene" uid="uid://dtpslb75er7h0" path="res://scenes/entities/customer.tscn" id="5_458hy"]
+[ext_resource type="PackedScene" uid="uid://c7eova41djrk4" path="res://scenes/utility/customer_template.tscn" id="5_hjw1m"]
 [ext_resource type="PackedScene" uid="uid://n5e4tx7wut0s" path="res://sercommtest/ser_comm.tscn" id="6_tr6qb"]
-[ext_resource type="PackedScene" uid="uid://sxfwi2cxgdsv" path="res://assets/models/coatrackbutididitgood.fbx" id="7_qupdm"]
 
 [sub_resource type="BoxShape3D" id="BoxShape3D_rkf3p"]
 size = Vector3(50, 30, 4)
@@ -21,7 +19,7 @@ port = 1
 unique_name_in_owner = true
 
 [node name="CoatRack" parent="." instance=ExtResource("1_usuw0")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 1)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.564, -4.3, 1)
 
 [node name="Camera3D" type="Camera3D" parent="."]
 transform = Transform3D(0.776201, 0, 0, 0, 0.776201, 0, 0, 0, 0.776201, 0, 9, 20)
@@ -37,12 +35,6 @@ omni_attenuation = 0.0
 
 [node name="PlayerController" parent="." instance=ExtResource("3_26ppk")]
 
-[node name="Item" parent="." instance=ExtResource("4_rux80")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 14.6614, 8.43762, 6)
-
-[node name="Customer" parent="." instance=ExtResource("5_458hy")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 10, 10, 5.9)
-
 [node name="InteractableArea" type="Area3D" parent="."]
 input_ray_pickable = false
 
@@ -56,8 +48,9 @@ shape = SubResource("BoxShape3D_rkf3p")
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 7.5, 4)
 shape = SubResource("BoxShape3D_onlbo")
 
-[node name="Item2" parent="." instance=ExtResource("4_rux80")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 3, 8, 6)
+[node name="Customer1" parent="." instance=ExtResource("5_hjw1m")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -15, 0, 0)
+id = 1
 
-[node name="coatrackbutididitgood" parent="." instance=ExtResource("7_qupdm")]
-transform = Transform3D(361.233, 0, 0, 0, 366.125, 0, 0, 0, 390.257, 17.197, 29.761, 59.6957)
+[editable path="Customer1"]
+[editable path="Customer1/Customer"]

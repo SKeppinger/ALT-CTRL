@@ -1,5 +1,7 @@
 extends Node3D
 
+@export var ID: int
+
 signal dropped
 
 var coat_rack
@@ -12,6 +14,10 @@ func get_holding():
 func clear_holding():
 	holding.remove_from_group("holding")
 	holding = null
+
+func set_holding(holder):
+	holder.add_to_group("holding")
+	holding = holder
 
 func _ready():
 	coat_rack = get_tree().get_first_node_in_group("coat_rack")

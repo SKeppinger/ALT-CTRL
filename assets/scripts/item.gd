@@ -5,6 +5,7 @@ extends Node3D
 signal dropped
 
 var coat_rack
+var area
 var hovering = null
 var holding = null
 
@@ -16,20 +17,20 @@ func clear_holding():
 	holding = null
 
 func set_holding(holder):
-	holder.add_to_group("holding")
-	holding = holder
+	hovering = holder
+	dropped.emit()
 
 func _ready():
 	coat_rack = get_tree().get_first_node_in_group("coat_rack")
+	area = $ItemArea
 
 func _process(_delta):
 	if holding and is_in_group("worn"):
-		self.global_position = holding.get_parent().global_position
-		self.global_position.z += 0.1
+		self.position = Vector3(0, 0, 0.1)
 	elif holding and is_in_group("hanging"):
 		self.global_position = holding.global_position
-	if holding and is_in_group("bottom"):
-		self.global_position.y += 2.5
+	if is_in_group("hanging"):
+		self.global_position.y += -1.0 * area.position.y
 
 func _on_dropped():
 	if hovering and !hovering.is_in_group("holding"):
@@ -62,5 +63,4 @@ func _on_drop_area_area_entered(area):
 func _on_drop_area_area_exited(area):
 	if area.is_in_group("hovering"):
 		print("not hover")
-		hovering = null
 		area.remove_from_group("hovering")

@@ -1,14 +1,15 @@
-[gd_scene load_steps=3 format=3 uid="uid://dtpslb75er7h0"]
+[gd_scene load_steps=2 format=3 uid="uid://dtpslb75er7h0"]
 
-[ext_resource type="Script" path="res://assets/scripts/customer.gd" id="1_qhclh"]
-
-[sub_resource type="SphereShape3D" id="SphereShape3D_0tjba"]
+[sub_resource type="SphereShape3D" id="SphereShape3D_lmwng"]
 radius = 3.0
 
 [node name="Customer" type="Node3D" groups=["customer"]]
-script = ExtResource("1_qhclh")
 
-[node name="MeshInstance3D" type="MeshInstance3D" parent="."]
+[node name="EntranceWalkingMesh" type="MeshInstance3D" parent="."]
+
+[node name="IdleMesh" type="MeshInstance3D" parent="."]
+
+[node name="ExitWalkingMesh" type="MeshInstance3D" parent="."]
 
 [node name="Top Half" type="Node3D" parent="." groups=["item_receiver", "top"]]
 
@@ -16,7 +17,7 @@ script = ExtResource("1_qhclh")
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="Top Half/TopArea"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, -3)
-shape = SubResource("SphereShape3D_0tjba")
+shape = SubResource("SphereShape3D_lmwng")
 
 [node name="Bottom Half" type="Node3D" parent="." groups=["bottom", "item_receiver"]]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -2.41658, 0)
@@ -26,4 +27,4 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -0.142151, 0)
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="Bottom Half/Bottom Area"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, -3)
-shape = SubResource("SphereShape3D_0tjba")
+shape = SubResource("SphereShape3D_lmwng")
